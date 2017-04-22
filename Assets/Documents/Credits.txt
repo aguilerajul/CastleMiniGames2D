@@ -1,0 +1,26 @@
+Models from:
+http://gaurav.munjal.us/Universal-LPC-Spritesheet-Character-Generator/#
+Other Models:
+http://charas-project.net/charas2/index.php
+
+Menu:
+http://opengameart.org/content/rpg-gui-construction-kit-v10
+
+Platform:
+https://www.assetstore.unity3d.com/en/#!/content/61810
+
+Music:
+http://freemusicarchive.org/search/?quicksearch=medieval
+
+
+-------------
+LEvels:
+
+Run Heroe Run
+Destroy the bats
+Fight for honor
+Resolve the riddle
+
+
+Wall 2
+https://media.indiumgames.com/medialibrary/2014/07/MakingMap1.png

@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 005e3d1957a6bae4dbe7799da66701e9
+timeCreated: 1490562571
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: BlackInitialText
+  fontNames:
+  - BlackInitialText
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
