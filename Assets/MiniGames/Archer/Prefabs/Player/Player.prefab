@@ -235,11 +235,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92c1e5165e718214e9c61fee47212959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _arrowPrefab: {fileID: 1710499948339188, guid: 2666002474d41ef4b9532a84b738c39d,
+  _arrowPrefab: {fileID: 1201130356097716, guid: d800e45260f4ce34d828af18f5995664,
     type: 2}
   _arrowThrowForce: 20
   _arrowSpawnPosition: {fileID: 4712632063308520}
   _throwArrowRate: 0.7
+  _arrowEffect: {fileID: 8300000, guid: 198d0befd5b2b1c4b8f12fd24d93daa7, type: 3}
+  _maxMovementWidth: 10
+  _minMovementWidth: -10
+  _maxMovementHeight: 10
+  _minMovementHeight: -10
 --- !u!114 &114657200535813334
 MonoBehaviour:
   m_ObjectHideFlags: 1

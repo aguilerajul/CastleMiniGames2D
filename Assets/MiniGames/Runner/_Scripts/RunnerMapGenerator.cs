@@ -34,7 +34,7 @@ public class RunnerMapGenerator : MonoBehaviour
 
     private void Update()
     {
-        _txtScore.text = GameManager.GetScore();
+        _txtScore.text = GameManager.GetScore(Utilities.GetCurrentSceneName());
     }
 
     private void CreateGameObjects()

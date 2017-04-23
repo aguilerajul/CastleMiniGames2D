@@ -1,0 +1,468 @@
+fileFormatVersion: 2
+guid: c8b60bf7d5fa67b41886e4608597c139
+timeCreated: 1492981282
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: fireball_sprite_0
+    21300002: fireball_sprite_1
+    21300004: fireball_sprite_2
+    21300006: fireball_sprite_3
+    21300008: fireball_sprite_4
+    21300010: fireball_sprite_5
+    21300012: fireball_sprite_6
+    21300014: fireball_sprite_7
+    21300016: fireball_sprite_8
+    21300018: fireball_sprite_9
+    21300020: fireball_sprite_10
+    21300022: fireball_sprite_11
+    21300024: fireball_sprite_12
+    21300026: fireball_sprite_13
+    21300028: fireball_sprite_14
+    21300030: fireball_sprite_15
+    21300032: fireball_sprite_16
+    21300034: fireball_sprite_17
+    21300036: fireball_sprite_18
+    21300038: fireball_sprite_19
+    21300040: fireball_sprite_20
+    21300042: fireball_sprite_21
+    21300044: fireball_sprite_22
+    21300046: fireball_sprite_23
+    21300048: fireball_sprite_24
+    21300050: fireball_sprite_25
+    21300052: fireball_sprite_26
+    21300054: fireball_sprite_27
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 450
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fireball_sprite_0
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 3319
+        width: 890
+        height: 617
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fireball_sprite_1
+      rect:
+        serializedVersion: 2
+        x: 1121
+        y: 3391
+        width: 871
+        height: 466
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fireball_sprite_2
+      rect:
+        serializedVersion: 2
+        x: 2151
+        y: 3373
+        width: 802
+        height: 510
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fireball_sprite_3
+      rect:
+        serializedVersion: 2
+        x: 2968
+        y: 3663
+        width: 9
+        height: 14
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fireball_sprite_4
+      rect:
+        serializedVersion: 2
+        x: 3136
+        y: 3299
+        width: 843
+        height: 632
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fireball_sprite_5
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 2269
+        width: 876
+        height: 627
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fireball_sprite_6
+      rect:
+        serializedVersion: 2
+        x: 1111
+        y: 2264
+        width: 849
+        height: 603
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fireball_sprite_7
+      rect:
+        serializedVersion: 2
+        x: 2152
+        y: 2319
+        width: 833
+        height: 593
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fireball_sprite_8
+      rect:
+        serializedVersion: 2
+        x: 3117
+        y: 2333
+        width: 882
+        height: 564
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fireball_sprite_9
+      rect:
+        serializedVersion: 2
+        x: 4024
+        y: 2592
+        width: 17
+        height: 24
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fireball_sprite_10
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 2579
+        width: 8
+        height: 8
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fireball_sprite_11
+      rect:
+        serializedVersion: 2
+        x: 1109
+        y: 2567
+        width: 6
+        height: 8
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fireball_sprite_12
+      rect:
+        serializedVersion: 2
+        x: 1917
+        y: 2477
+        width: 70
+        height: 44
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fireball_sprite_13
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1241
+        width: 872
+        height: 604
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fireball_sprite_14
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 1305
+        width: 861
+        height: 504
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fireball_sprite_15
+      rect:
+        serializedVersion: 2
+        x: 2109
+        y: 1297
+        width: 816
+        height: 543
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fireball_sprite_16
+      rect:
+        serializedVersion: 2
+        x: 2883
+        y: 1477
+        width: 118
+        height: 72
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fireball_sprite_17
+      rect:
+        serializedVersion: 2
+        x: 3141
+        y: 1247
+        width: 812
+        height: 606
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fireball_sprite_18
+      rect:
+        serializedVersion: 2
+        x: 3927
+        y: 1537
+        width: 153
+        height: 74
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fireball_sprite_19
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 189
+        width: 868
+        height: 619
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fireball_sprite_20
+      rect:
+        serializedVersion: 2
+        x: 1115
+        y: 189
+        width: 805
+        height: 598
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fireball_sprite_21
+      rect:
+        serializedVersion: 2
+        x: 2141
+        y: 257
+        width: 788
+        height: 508
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fireball_sprite_22
+      rect:
+        serializedVersion: 2
+        x: 3119
+        y: 256
+        width: 777
+        height: 481
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fireball_sprite_23
+      rect:
+        serializedVersion: 2
+        x: 2595
+        y: 191
+        width: 54
+        height: 17
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fireball_sprite_24
+      rect:
+        serializedVersion: 2
+        x: 3328
+        y: 207
+        width: 35
+        height: 36
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fireball_sprite_25
+      rect:
+        serializedVersion: 2
+        x: 3367
+        y: 201
+        width: 6
+        height: 6
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fireball_sprite_26
+      rect:
+        serializedVersion: 2
+        x: 3381
+        y: 195
+        width: 6
+        height: 6
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fireball_sprite_27
+      rect:
+        serializedVersion: 2
+        x: 3475
+        y: 175
+        width: 18
+        height: 12
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

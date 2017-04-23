@@ -17,14 +17,14 @@ public class PoolingBats : MonoBehaviour
     #region Custom Methods
     void SpawnBats()
     {
-        GameObject barrelInstance = PoolManager.Instance.GetPooledObject();
-        if (barrelInstance == null)
+        GameObject batInstance = PoolManager.Instance.GetPooledObject();
+        if (batInstance == null)
             return;
 
         Vector2 spawnPosition = this.transform.position;
         spawnPosition.y -= 0.5f;
-        barrelInstance.transform.position = spawnPosition;
-        barrelInstance.SetActive(true);
+        batInstance.transform.position = spawnPosition;
+        batInstance.SetActive(true);
     }
     #endregion
 

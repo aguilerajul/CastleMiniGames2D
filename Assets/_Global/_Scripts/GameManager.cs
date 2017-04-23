@@ -5,19 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    #region Constants
+    public const int SCENE_MENU_INDEX = 1;
+    public const int DEFAULT_SCENE_GAME_INDEX = 2;
     public const string SCORE_TEXT = "Score: ";
-    
+    #endregion
+
     #region Unity Editor Variables
     [Header("Time Game Settings")]
     [SerializeField]
-    int _gameDuration = 15;
-    [SerializeField]
-    public int Difficulty { get; set; }
+    int _gameDuration = 15;    
     #endregion
 
     #region Static Variables
     static int _miniGameDuration = 15;
-    static MiniGameStats MiniGameStatsProp { get; set; }    
+    static int _difficultyLevel = 1;
     #endregion
 
     #region Private Variables
@@ -25,21 +27,21 @@ public class GameManager : MonoBehaviour
     List<int> _scenesLoaded;
     int _currentSceneIndex;
     #endregion
-
-    #region Constants
-    public const int SCENE_MENU_INDEX = 1;
-    public const int DEFAULT_SCENE_GAME_INDEX = 2;
-    #endregion
-
+    
     #region Properties
     public static GameManager Instance { get; private set; }
-    public int BuildSettingsCount
+    int BuildSettingsCount
     {
         get
         {
             return SceneManager.sceneCountInBuildSettings - 1;
         }
     }
+
+    #region Static Properties
+    public static List<MiniGameStats> MiniGameStatsPropList { get; set; }
+    #endregion
+
     #endregion
 
     #region Unity Functions
@@ -51,24 +53,22 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        Difficulty = 1;
-        _scenesList = new List<int>();
-        _scenesLoaded = new List<int>();
-        SceneManager.LoadScene(SCENE_MENU_INDEX, LoadSceneMode.Additive);
         _miniGameDuration = _gameDuration;
+        _scenesList = new List<int>();
+        _scenesLoaded = new List<int>();        
+        MiniGameStatsPropList = new List<MiniGameStats>();
+
+        SceneManager.LoadScene(SCENE_MENU_INDEX, LoadSceneMode.Additive);
     }
     #endregion
 
     #region Custom Functions
     public void StartMiniGames()
     {
-        MiniGameStatsProp = new MiniGameStats
-        {
-            Completed = false,
-            GameNameList = new List<string>(),
-            Score = 0
-        };
-                
+        _scenesList = new List<int>();
+        _scenesLoaded = new List<int>();
+        MiniGameStatsPropList = new List<MiniGameStats>();
+
         for (int i = DEFAULT_SCENE_GAME_INDEX; i < BuildSettingsCount; i++)
         {
             var randomSceneIndex = GetRandomSceneIndex();
@@ -82,37 +82,62 @@ public class GameManager : MonoBehaviour
 
         System.Random randomOrderIndex = new System.Random();
         var randomScenesList = _scenesList.OrderBy(x => randomOrderIndex.Next()).ToList();
-
+        
         _currentSceneIndex = randomScenesList[0];
         _scenesLoaded.Add(_currentSceneIndex);
+
+        MiniGameStatsPropList.Add(new MiniGameStats
+        {
+            Completed = false,
+            Difficulty = _difficultyLevel,
+            GameName = System.Enum.GetName(typeof(ScenesEnum), _currentSceneIndex)
+        });
+
         SceneManager.LoadScene(_currentSceneIndex);
-        
     }
 
     public void StartNextGame()
     {
-        Difficulty += Mathf.Clamp(Difficulty, 1, 6);
-
-        if (_scenesLoaded.Count >= BuildSettingsCount)
+        if(_difficultyLevel < 5)
         {
-            SceneManager.LoadScene("GameOver");
+            _difficultyLevel += 1;
         }
 
-        int rndSceneIndex = GetRandomSceneIndex();
-        while(rndSceneIndex == _currentSceneIndex)
+        if (_scenesLoaded.Count >= BuildSettingsCount -2)
         {
-            rndSceneIndex = GetRandomSceneIndex();
-        }
-
-        var nexSceneIndex = _scenesLoaded.FirstOrDefault(x => x == rndSceneIndex);
-        if (nexSceneIndex == 0)
-        {
-            _scenesLoaded.Add(rndSceneIndex);
-            SceneManager.LoadScene(_scenesLoaded[_scenesLoaded.Count -1]);
+            SceneManager.LoadScene("Score");
         }
         else
         {
-            SceneManager.LoadScene("Final");
+            int rndSceneIndex = GetRandomSceneIndex();
+            while (rndSceneIndex == _currentSceneIndex)
+            {
+                rndSceneIndex = GetRandomSceneIndex();
+            }
+
+            var nexSceneIndex = _scenesLoaded.FirstOrDefault(x => x == rndSceneIndex);
+            if (nexSceneIndex == 0)
+            {
+                _scenesLoaded.Add(rndSceneIndex);
+
+                int sceneIndex = _scenesLoaded[_scenesLoaded.Count - 1]; ;
+                MiniGameStatsPropList.Add(new MiniGameStats
+                {
+                    Completed = false,
+                    Difficulty = _difficultyLevel,
+                    GameName = System.Enum.GetName(typeof(ScenesEnum), sceneIndex)
+                });
+
+                SceneManager.LoadScene(sceneIndex);
+            }
+            else if (_scenesLoaded.Count < (SceneManager.sceneCountInBuildSettings - 3))
+            {
+                StartNextGame();
+            }
+            else
+            {
+                SceneManager.LoadScene("Score");
+            }
         }
     }
 
@@ -126,14 +151,22 @@ public class GameManager : MonoBehaviour
         return _miniGameDuration;
     }
 
-    public static string GetScore()
+    public static string GetScore(string gameName)
     {
-        return GameManager.SCORE_TEXT + MiniGameStatsProp.Score;
+        MiniGameStats miniGameStats = MiniGameStatsPropList.FirstOrDefault(x => x.GameName == gameName);
+        if(miniGameStats == null)
+        {
+            return GameManager.SCORE_TEXT + "0";
+        }
+        else
+        {
+            return GameManager.SCORE_TEXT + MiniGameStatsPropList.FirstOrDefault(x => x.GameName == gameName).Score;
+        }       
     }
 
-    public static void SetScore(int score)
+    public static void SetScore(int score, string gameName)
     {
-        MiniGameStatsProp.Score += score;
+        MiniGameStatsPropList.FirstOrDefault(x => x.GameName == gameName).Score += score;
     }
     #endregion
 

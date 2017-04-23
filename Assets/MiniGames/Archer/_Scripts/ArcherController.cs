@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 public class ArcherController : MonoBehaviour
@@ -14,6 +15,14 @@ public class ArcherController : MonoBehaviour
     float _throwArrowRate = 1f;
     [SerializeField]
     AudioClip _arrowEffect;
+    [SerializeField]
+    float _maxMovementWidth = 10f;
+    [SerializeField]
+    float _minMovementWidth = -10f;
+    [SerializeField]
+    float _maxMovementHeight = 10f;
+    [SerializeField]
+    float _minMovementHeight = -10f;
     #endregion
 
     #region Private Variables
@@ -35,6 +44,8 @@ public class ArcherController : MonoBehaviour
 
     private void Update()
     {
+        LimitPlayerMovement();
+
         if (Input.GetAxis("Fire1") > 0 && Time.time > _currentThrowArrowRate)
         {
             _currentThrowArrowRate = Time.time + _throwArrowRate;
@@ -78,7 +89,7 @@ public class ArcherController : MonoBehaviour
     private void ThrowArrow(float angle, Vector2 direction)
     {
         Vector2 _newSpawnPosition = _arrowSpawnPosition.position;
-        
+
         if (angle < 45f && angle > -45f)
         {
             _newSpawnPosition.y += 1f;
@@ -138,5 +149,11 @@ public class ArcherController : MonoBehaviour
     {
         StopCoroutine(SetAnimationShootingCourutine());
     }
+
+    void LimitPlayerMovement()
+    {
+        _playerController.transform.position = Utilities.LimitPlayerMovementsInScene(_playerController.transform, _minMovementWidth, _maxMovementWidth, _minMovementHeight, _maxMovementHeight);
+    }
+
     #endregion
 }

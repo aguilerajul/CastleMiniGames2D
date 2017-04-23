@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     public bool SetAutomaticMovement { get; set; }
     public bool IsOnLadder { get; set; }
     public bool IsShooting { get; set; }
+    public bool IsDamaged { get; set; }
     #endregion
 
     #region Private Variables
@@ -55,21 +56,25 @@ public class PlayerController : MonoBehaviour
     }
 
     private void SetAnimationByMovement()
-    {
+    {        
         float directionToMove = GetDirectionToMove();
-        if (directionToMove < 0 && !IsShooting)
+        if (directionToMove < 0 && !IsShooting && !IsOnLadder && !IsDamaged)
         {            
             _animator.SetTrigger(PlayerAnimationEnum.WalkingLeft.ToString());
         }
-        else if (directionToMove > 0 && !IsShooting)
+        else if (directionToMove > 0 && !IsShooting && !IsOnLadder && !IsDamaged)
         {            
             _animator.SetTrigger(PlayerAnimationEnum.Walk.ToString());
         }
         else if (IsOnLadder)
         {
             Climb();
-        }        
-        else if(!IsShooting)
+        }
+        else if(_verticalMovement != 0)
+        {
+            _animator.SetTrigger(PlayerAnimationEnum.Up.ToString());
+        }
+        else
         {
             _animator.SetTrigger(PlayerAnimationEnum.Idle.ToString());
         }

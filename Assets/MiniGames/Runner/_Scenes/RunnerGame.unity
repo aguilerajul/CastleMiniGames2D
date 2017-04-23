@@ -590,8 +590,10 @@ MonoBehaviour:
   - {fileID: 1418586375582826, guid: 2cd713aac8cf1ea45bdcb3158347e18b, type: 2}
   - {fileID: 1463888647901286, guid: 2bcc7bffa4308bb4496cf6d37bc8da7a, type: 2}
   - {fileID: 1666136901706758, guid: a9518be315939ea4aa79b457c7b5ecfc, type: 2}
-  - {fileID: 1769991179453146, guid: 96e561d7efc2de2489d31492820e8345, type: 2}
+  - {fileID: 1371815270603008, guid: 45eed3e10adce9b4db5614d43646b65d, type: 2}
+  - {fileID: 1125461512359208, guid: f2b7808ebe18b4f40ad73809c39cf0b7, type: 2}
   - {fileID: 1985007272892146, guid: 192aace765d908e46ad16657883a6b50, type: 2}
+  - {fileID: 1463888647901286, guid: 2bcc7bffa4308bb4496cf6d37bc8da7a, type: 2}
   _coinsPrefabs:
   - {fileID: 1712363277863496, guid: 6921b0fc2c895ed469e53ac0e4eabe94, type: 2}
   - {fileID: 1431357289203958, guid: 646adae9e59be1a47848b9230cb88b1a, type: 2}

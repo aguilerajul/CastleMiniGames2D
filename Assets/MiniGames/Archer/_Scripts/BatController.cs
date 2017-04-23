@@ -51,7 +51,7 @@ public class BatController : MonoBehaviour
             DisableBat();
             Destroy(collision.collider.gameObject);
 
-            GameManager.SetScore(1);
+            GameManager.SetScore(1, Utilities.GetCurrentSceneName());
         }
 
         if (collision.collider.CompareTag("Player"))

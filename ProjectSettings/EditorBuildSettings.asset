@@ -16,4 +16,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MiniGames/Platform/_Scenes/PlatformGame.unity
   - enabled: 1
-    path: Assets/_Global/_Scenes/Final.unity
+    path: Assets/MiniGames/Dragon/_Scenes/DragonGame.unity
+  - enabled: 1
+    path: Assets/_Global/_Scenes/Score.unity

@@ -1,0 +1,21 @@
+El juego se ejecuta desde la Escena Setup de la carpeta Global
+
+Juegos:
+
+Runner: Implementado
+Plataforma: Implementado
+Arquero: Implementado
+Dragon: Implementado
+
+Dificultad
+
+Menú Principal: Implementado
+Menú de Configuración Implementado
+Pantalla Final: Implementado
+Audio: Implementado
+
+
+Texto descriptivo del juego: No Implementado
+
+Dudas:
+Tuve problemas con las animaciones al final no logre acomodarlas.

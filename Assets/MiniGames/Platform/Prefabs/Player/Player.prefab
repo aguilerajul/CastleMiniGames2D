@@ -59,7 +59,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1625662350877894}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.65, y: -2.44, z: 10}
+  m_LocalPosition: {x: -10.044, y: -2.5063, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224600164216152218}
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32579df8550c69d40bddfc50c7c79d40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lifes: 4
+  _lifes: 5
   _minFallingPositionInYTodie: -10
 --- !u!114 &114556772726332808
 MonoBehaviour:
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _movementSpeed: 13
   _jumpForce: 8
-  _climbSpeed: 4
+  _climbSpeed: 2.5
 --- !u!114 &114849053704439784
 MonoBehaviour:
   m_ObjectHideFlags: 1
