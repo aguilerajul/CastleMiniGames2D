@@ -56,7 +56,7 @@ public class BatController : MonoBehaviour
 
         if (collision.collider.CompareTag("Player"))
         {
-            _playerLife.Damage(_playerDamage);
+            _playerLife.Damage(_playerDamage);            
             DisableBat();
         }
     }

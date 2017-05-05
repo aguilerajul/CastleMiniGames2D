@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     #region Private Variables
     List<int> _scenesList;
     List<int> _scenesLoaded;
-    int _currentSceneIndex;
+    int _currentSceneIndex;    
     #endregion
     
     #region Properties
@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     {
         get
         {
-            return SceneManager.sceneCountInBuildSettings - 1;
+            return SceneManager.sceneCountInBuildSettings - 2;
         }
     }
 
@@ -92,7 +92,7 @@ public class GameManager : MonoBehaviour
             Difficulty = _difficultyLevel,
             GameName = System.Enum.GetName(typeof(ScenesEnum), _currentSceneIndex)
         });
-
+        
         SceneManager.LoadScene(_currentSceneIndex);
     }
 

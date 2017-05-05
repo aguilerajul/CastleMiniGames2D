@@ -120,15 +120,15 @@ public class ArcherController : MonoBehaviour
         _playerController.IsShooting = true;
         if (angle < 45f && angle > -45f)
         {
-            _playerController.GetComponent<Animator>().SetTrigger(PlayerAnimationEnum.ShootingUp.ToString());
+            _playerController.GetComponent<Animator>().SetTrigger(AnimationEnum.ShootingUp.ToString());
         }
         else if (angle > 45f)
         {
-            _playerController.GetComponent<Animator>().SetTrigger(PlayerAnimationEnum.ShootingLeft.ToString());
+            _playerController.GetComponent<Animator>().SetTrigger(AnimationEnum.ShootingLeft.ToString());
         }
         else if (angle < -45f)
         {
-            _playerController.GetComponent<Animator>().SetTrigger(PlayerAnimationEnum.ShootingRight.ToString());
+            _playerController.GetComponent<Animator>().SetTrigger(AnimationEnum.ShootingRight.ToString());
         }
         SetAnimationShooting();
     }

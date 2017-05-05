@@ -13,11 +13,11 @@ public class PlatformManager : MonoBehaviour
 
     int _difficulty = 1;
 
-    public static bool PlayerGotTheKey {get; set;}
+    public static bool PlayerGotTheKey { get; set; }
 
     GameObject _player;
     CameraController _cameraController;
-    
+
     private void Awake()
     {
         _cameraController = Camera.main.GetComponent<CameraController>();
@@ -27,6 +27,8 @@ public class PlatformManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        //MessageBoxMenu.ShowMessage("Try to get to the top and open the door with the key, but be careful with the barrels, GOOD LUCK!!!", 10);        
+
         _cameraController._target = _player.transform;
         if (GameManager.MiniGameStatsPropList != null && GameManager.MiniGameStatsPropList.Count > 1)
         {

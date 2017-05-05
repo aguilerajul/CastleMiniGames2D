@@ -108,11 +108,11 @@ public class DragonController : MonoBehaviour
         float directionToMove = _horizontalMovement;
         if (_isFiring)
         {
-            _animator.SetTrigger(PlayerAnimationEnum.ShootingRight.ToString());
+            _animator.SetTrigger(AnimationEnum.ShootingRight.ToString());
         }
         else
         {
-            _animator.SetTrigger(PlayerAnimationEnum.Flying.ToString());
+            _animator.SetTrigger(AnimationEnum.Flying.ToString());
         }
     }
 

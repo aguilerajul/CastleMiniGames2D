@@ -7,9 +7,9 @@ public abstract class LifeController : MonoBehaviour
     [SerializeField]
     [Range(1, 6)]
     int _lifes;
-
+    
     public float _currentLifes { get; private set; }
-
+    
     private void Start()
     {
         this._currentLifes = _lifes;
@@ -24,7 +24,7 @@ public abstract class LifeController : MonoBehaviour
     {
         if(this._currentLifes > 0)
         {
-            this._currentLifes -= damage;
+            this._currentLifes -= damage;  
         }
         
         if(this._currentLifes <= 0)

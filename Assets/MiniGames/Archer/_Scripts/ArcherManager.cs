@@ -20,6 +20,7 @@ public class ArcherManager : MonoBehaviour
     private void Start()
     {
         SetDifficulty();
+        //MessageBoxMenu.ShowMessage("Survive to the bats attack by 30 seconds, you can move with wasd or arrows key and fire with the left click of mouse, GOOD LUCK!!!", 10);
     }
 
     private void SetDifficulty()

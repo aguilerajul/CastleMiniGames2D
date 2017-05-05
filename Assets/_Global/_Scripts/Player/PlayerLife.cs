@@ -3,19 +3,19 @@ using UnityEngine;
 
 public class PlayerLife : LifeController
 {
-    [SerializeField]
-    float _minFallingPositionInYTodie;
-
     GameObject _player;
+    Animator _playerAnimator;
+    float _minPosition;
 
     private void Awake()
     {
         _player = GameObject.FindGameObjectWithTag("Player");
+        _minPosition = _player.transform.position.y - 5f;
     }
 
     private void Update()
     {
-        if(_player.transform.position.y <= _minFallingPositionInYTodie)
+        if (_player.transform.position.y <= _minPosition)
         {
             Die();
         }
@@ -23,8 +23,7 @@ public class PlayerLife : LifeController
 
     protected override void Die()
     {
-        _player.GetComponent<Animator>().SetTrigger(PlayerAnimationEnum.Die.ToString());
-
+        _player.GetComponent<PlayerController>().IsDead = true;
         ChangeGame();
     }
 
@@ -35,7 +34,7 @@ public class PlayerLife : LifeController
 
     IEnumerator StartNextGameCourutine()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
 
         GameManager.Instance.StartNextGame();
     }

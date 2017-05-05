@@ -3,8 +3,6 @@
 public class DoorController : MonoBehaviour
 {
     [SerializeField]
-    float _distanceToOpen = 0.5f;
-    [SerializeField]
     GameObject _closedDoorPrefab;
     [SerializeField]
     GameObject _openedDoorPrefab;
@@ -21,11 +19,9 @@ public class DoorController : MonoBehaviour
         _closedDoorPrefab.SetActive(true);
     }
 
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        float distance = Utilities.CalculateDistance(_player.transform, this.transform);
-
-        if (distance <= _distanceToOpen && PlatformManager.PlayerGotTheKey)
+        if (collision.CompareTag("Player") && PlatformManager.PlayerGotTheKey)
         {
             _openedDoorPrefab.SetActive(true);
             _closedDoorPrefab.SetActive(false);

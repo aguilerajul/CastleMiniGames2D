@@ -1,4 +1,4 @@
-﻿public enum PlayerAnimationEnum  {
+﻿public enum AnimationEnum  {
     Idle,
     Walk,
     Flying,

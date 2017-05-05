@@ -16,7 +16,8 @@ public class RunnerMapGenerator : MonoBehaviour
     bool _activateDebugMode;
     [SerializeField]
     GameObject _enemyPrefab;
-        
+
+    bool _generatedMap;
     int _remaningTime;
     CameraController _cameraController;
 
@@ -27,14 +28,15 @@ public class RunnerMapGenerator : MonoBehaviour
 
     // Use this for initialization
     void Start()
-    {
+    {   
         _remaningTime = GameManager.GetTimePerGame();
         CreateGameObjects();
+        //MessageBoxMenu.ShowMessage("Run as far as you can and get the coins, but be careful with the stakes, GOOD LUCK!!!", 10);
     }
 
     private void Update()
-    {
-        _txtScore.text = GameManager.GetScore(Utilities.GetCurrentSceneName());
+    {       
+        _txtScore.text = GameManager.GetScore(Utilities.GetCurrentSceneName());        
     }
 
     private void CreateGameObjects()

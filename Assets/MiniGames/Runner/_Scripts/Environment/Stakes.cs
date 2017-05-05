@@ -22,7 +22,7 @@ public class Stakes : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            _player.GetComponent<Animator>().SetTrigger(PlayerAnimationEnum.Damaged.ToString());
+            _player.GetComponent<Animator>().SetTrigger(AnimationEnum.Damaged.ToString());
             _player.GetComponent<PlayerLife>().Damage(_damage);
         }
     }

@@ -2,18 +2,23 @@ El juego se ejecuta desde la Escena Setup de la carpeta Global
 
 Juegos:
 
-Runner: Implementado
-Plataforma: Implementado
-Arquero: Implementado
-Dragon: Implementado
+Runner: Implementado (Se juega solo con la tecla escape para saltar)
+	Objetivo: Evitar caer en los stakes o al vacío
+Plataforma: Implementado (Se juega con el wasd y la tecla escape)
+	Objetivo: Tratar de recuperar la llave del final y abrir la puerta.
+Arquero: Implementado (Se juega con el wasd y el botón izquierdo del mouse)
+	Objetivo: Sobrevivir a la oleada de murcielagos enviados por el rey.
+Dragon: Implementado (Se juega con el wasd y la tecla escape)
+	Objetivo: Sobrevivir a los ataques del castillo.
 
-Dificultad
+Dificultad: Implementado
 
 Menú Principal: Implementado
 Menú de Configuración Implementado
 Pantalla Final: Implementado
 Audio: Implementado
 
+Sistema de Trofeos: Implementado
 
 Texto descriptivo del juego: No Implementado
 

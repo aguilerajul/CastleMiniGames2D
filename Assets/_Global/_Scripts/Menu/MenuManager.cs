@@ -39,4 +39,9 @@ public class MenuManager : MonoBehaviour
         _GamePanel.SetActive(false);
         _AudioPanel.SetActive(true);
     }
+
+    public void CloseApplication()
+    {
+        Application.Quit();
+    }
 }

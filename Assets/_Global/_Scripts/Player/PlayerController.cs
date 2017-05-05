@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     public bool SetAutomaticMovement { get; set; }
     public bool IsOnLadder { get; set; }
     public bool IsShooting { get; set; }
-    public bool IsDamaged { get; set; }
+    public bool IsDead { get; set; }
     #endregion
 
     #region Private Variables
@@ -48,38 +48,57 @@ public class PlayerController : MonoBehaviour
 
     public virtual void Update()
     {
+        if (IsDead)
+        {
+            _animator.ResetTrigger(AnimationEnum.Walk.ToString());
+            _animator.ResetTrigger(AnimationEnum.WalkingLeft.ToString());
+            _animator.ResetTrigger(AnimationEnum.Up.ToString());
+
+            _animator.SetTrigger(AnimationEnum.Idle.ToString());
+            _animator.SetTrigger(AnimationEnum.Die.ToString());
+
+            return;
+        }
+
         _horizontalMovement = Input.GetAxis("Horizontal");
         _verticalMovement = Input.GetAxis("Vertical");
-
-        SetAnimationByMovement();
+        SetAnimationByAction();
         Jump();
     }
 
-    private void SetAnimationByMovement()
-    {        
-        float directionToMove = GetDirectionToMove();
-        if (directionToMove < 0 && !IsShooting && !IsOnLadder && !IsDamaged)
-        {            
-            _animator.SetTrigger(PlayerAnimationEnum.WalkingLeft.ToString());
-        }
-        else if (directionToMove > 0 && !IsShooting && !IsOnLadder && !IsDamaged)
-        {            
-            _animator.SetTrigger(PlayerAnimationEnum.Walk.ToString());
-        }
-        else if (IsOnLadder)
+    private void SetAnimationByAction()
+    {
+        float directionToMove = GetHorizontalDirectionToMove();        
+        if (directionToMove < 0 && !IsShooting && !IsOnLadder)
         {
+            _animator.ResetTrigger(AnimationEnum.Up.ToString());
+            _animator.ResetTrigger(AnimationEnum.Walk.ToString());
+
+            _animator.SetTrigger(AnimationEnum.WalkingLeft.ToString());
+        }
+        else if (directionToMove > 0 && !IsShooting && !IsOnLadder)
+        {
+            _animator.ResetTrigger(AnimationEnum.Up.ToString());
+            _animator.ResetTrigger(AnimationEnum.WalkingLeft.ToString());
+
+            _animator.SetTrigger(AnimationEnum.Walk.ToString());
+        }
+        else if (IsOnLadder && _verticalMovement != 0)
+        {
+            directionToMove = 0;
+            
+            _animator.ResetTrigger(AnimationEnum.Walk.ToString());
+            _animator.ResetTrigger(AnimationEnum.WalkingLeft.ToString());
+
+            _animator.SetTrigger(AnimationEnum.Up.ToString());
             Climb();
         }
-        else if(_verticalMovement != 0)
+        else if(!IsOnLadder)
         {
-            _animator.SetTrigger(PlayerAnimationEnum.Up.ToString());
-        }
-        else
-        {
-            _animator.SetTrigger(PlayerAnimationEnum.Idle.ToString());
+            _animator.SetTrigger(AnimationEnum.Idle.ToString());
         }
     }
-    
+
     public void DisableGravityScale()
     {
         _rbPlayer.gravityScale = 0;
@@ -94,13 +113,16 @@ public class PlayerController : MonoBehaviour
     {
         _rbPlayer.gravityScale = 0f;
         Vector2 verticalVectorMovement = new Vector2(_rbPlayer.velocity.x, _verticalMovement * _climbSpeed);
-        _animator.SetTrigger(PlayerAnimationEnum.Up.ToString());
+        _animator.SetTrigger(AnimationEnum.Up.ToString());
         _rbPlayer.velocity = verticalVectorMovement;
     }
 
     public virtual void FixedUpdate()
     {
-        Vector2 movement = (Vector2)transform.right * _movementSpeed * GetDirectionToMove();
+        if (IsDead || IsOnLadder)
+            return;
+
+        Vector2 movement = (Vector2)transform.right * _movementSpeed * GetHorizontalDirectionToMove();
         _rbPlayer.AddForce(movement);
     }
     #endregion
@@ -113,14 +135,14 @@ public class PlayerController : MonoBehaviour
             _rbPlayer.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
         }
     }
-    
+
     private bool IsGrounded()
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(_rbPlayer.position, 0.2f);
         return colliders.FirstOrDefault(x => x.gameObject.layer == LayerMask.NameToLayer("Floor"));
     }
 
-    private float GetDirectionToMove()
+    private float GetHorizontalDirectionToMove()
     {
         return SetAutomaticMovement ? 1 : _horizontalMovement;
     }

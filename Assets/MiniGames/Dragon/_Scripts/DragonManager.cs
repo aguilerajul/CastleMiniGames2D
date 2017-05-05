@@ -18,6 +18,8 @@ public class DragonManager : MonoBehaviour
 
     private void Start()
     {
+        //MessageBoxMenu.ShowMessage("Try to survive to the FireBalls throws from the castle, use the wasd or arrow kyes and fire with space bar, GOOD LUCK!!!", 10);
+        
         if (GameManager.MiniGameStatsPropList != null && GameManager.MiniGameStatsPropList.Count > 1)
         {
             MiniGameStats mgs = GameManager.MiniGameStatsPropList.FirstOrDefault(x => x.GameName == ScenesEnum.DragonGame.ToString());
