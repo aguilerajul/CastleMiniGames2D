@@ -6,6 +6,8 @@ The mini games are management by a game manager class that control all the games
 
 You have 30 seconds to collect coins and in the end you will see all the trophies obtain in every mini game.
 
+I Excluded some assets because cannot be use for free and has copyright, i'll attach some images to show how looks the game.
+
 ## Things implemented here:
 1. Game Manager.
 2. Game Menu.
