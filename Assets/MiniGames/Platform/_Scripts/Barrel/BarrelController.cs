@@ -10,10 +10,18 @@ public class BarrelController : MonoBehaviour
     int _playerDamage = 1;
 
     PlayerLife _playerLife;
+    private GameObject _player;
+    private Animator _playerAnimator;
 
     private void Awake()
     {
-        _playerLife = FindObjectOfType<PlayerLife>();
+        _player = GameObject.FindGameObjectWithTag("Player");
+        if (_player != null)
+        {
+            _playerLife = _player.GetComponent<PlayerLife>();
+            _playerAnimator = _player.GetComponent<Animator>();
+        }
+        
     }
 
     private void OnEnable()
@@ -36,6 +44,12 @@ public class BarrelController : MonoBehaviour
         if (collision.collider.CompareTag("Player"))
         {
             _playerLife.Damage(_playerDamage);
+            _playerAnimator.ResetTrigger(AnimationEnum.Up.ToString());
+            _playerAnimator.ResetTrigger(AnimationEnum.Walk.ToString());
+            _playerAnimator.ResetTrigger(AnimationEnum.WalkingLeft.ToString());
+
+            _playerAnimator.SetTrigger(AnimationEnum.Damaged.ToString());
+
             DisableBarrel();
         }
     }
