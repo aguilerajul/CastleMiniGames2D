@@ -18,5 +18,5 @@ I Excluded some assets because cannot be use for free and has copyright, i'll at
 	3. Platform: It's a game when you have to collect all the coins posible and if you can up to the top and open the door with a key.
 	4. Runner: It's a typical runner when you only can you trying to not fall in the holes bewteen platforms.
 	
-## Dowload:
-[a Here](https://www.dropbox.com/s/dmgrcqd71qlbinr/CastleMiniGames.rar?dl=0)
+## Playable Game in PC:
+[Download Here](https://www.dropbox.com/s/dmgrcqd71qlbinr/CastleMiniGames.rar?dl=0)
