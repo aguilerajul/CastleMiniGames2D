@@ -7,17 +7,28 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/_Global/_Scenes/Setup.unity
+    guid: f31fa1624dedff04e91bfd4c8b087ae5
   - enabled: 1
     path: Assets/_Global/_Scenes/Menu.unity
+    guid: a56597d39aa30b24688c4eec080ea018
   - enabled: 1
     path: Assets/MiniGames/Runner/_Scenes/RunnerGame.unity
+    guid: 85a85603a94e013419d26d8930d8e148
   - enabled: 1
     path: Assets/MiniGames/Archer/_Scenes/ArcherGame.unity
+    guid: e3ff859e3af739e429002fcfc29b0787
   - enabled: 1
     path: Assets/MiniGames/Platform/_Scenes/PlatformGame.unity
+    guid: 80fe89d25bb3a2c4fb4cbfc33b12bd52
   - enabled: 1
     path: Assets/MiniGames/Dragon/_Scenes/DragonGame.unity
+    guid: fb8c07ac09465124ab8df0634d897257
   - enabled: 1
     path: Assets/_Global/_Scenes/Score.unity
+    guid: bb508a67e87101f4b97e4b6fb9bada6b
+  - enabled: 1
+    path: Assets/_Global/_Scenes/Controls.unity
+    guid: cb20e8f0a7ca7324ba2de2ae0ca14103
   - enabled: 1
     path: Assets/_Global/_Scenes/MessageBox.unity
+    guid: 69081e3793f83a54fba7d86f9d62a215

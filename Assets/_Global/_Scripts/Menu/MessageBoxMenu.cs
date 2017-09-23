@@ -8,12 +8,17 @@ public class MessageBoxMenu : MonoBehaviour
     public const string MESSAGE_BOX_SCENE = "MessageBox";
 
     [SerializeField]
-    Text _contentText;
+    Text _gameNameText;
+
+    [SerializeField]
+    Text _contentDescriptionText;
 
     private static string _message;
+    private static string _gameName;
     private static float _seconds;
     private static bool _isVisible;
-
+    private float _currentTimeScale;
+    
     public static bool IsMessageFinished;
 
     public static void ShowMessage(string message, float seconds)
@@ -22,33 +27,40 @@ public class MessageBoxMenu : MonoBehaviour
 
         _isVisible = true;
 
-        MessageBoxMenu._message = message;
-        MessageBoxMenu._seconds = seconds;
+        _message = message;
+        _seconds = seconds;
+        _gameName = GameManager._currentGameName;
 
         SceneManager.LoadScene(MESSAGE_BOX_SCENE, LoadSceneMode.Additive);
     }
 
     void Start()
-    {       
-        StartCoroutine(ShowMessage_Corrutine(MessageBoxMenu._message, MessageBoxMenu._seconds));
+    {
+        _currentTimeScale = Time.timeScale;
+        StartCoroutine(ShowMessage_Corrutine(_message, _seconds));
         IsMessageFinished = true;
     }
 
     IEnumerator ShowMessage_Corrutine(string message, float seconds)
     {
-        _contentText.text = string.Empty;
+        Time.timeScale = 0.01f;
+
+        _contentDescriptionText.text = string.Empty;
+        _gameNameText.text = _gameName;
 
         float delayPerChar = seconds / message.Length;
         WaitForSeconds wait = new WaitForSeconds(delayPerChar);
 
         foreach (char c in message)
         {
-            _contentText.text += c;
+            _contentDescriptionText.text += c;
             yield return wait;
         }
         
         yield return new WaitForSeconds(2);
         yield return SceneManager.UnloadSceneAsync(MESSAGE_BOX_SCENE);
+
+        Time.timeScale = _currentTimeScale;
     }
 
     void OnDestroy()
