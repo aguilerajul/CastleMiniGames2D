@@ -15,12 +15,24 @@ public class ArcherManager : MonoBehaviour
     [SerializeField]
     GameObject _batPoolingDifficulty3_1;
 
+    [SerializeField]
+    private Texture2D _archerCursor;
+    
     int _difficulty = 1;
 
     private void Start()
     {
+        SetCursor();
+
         SetDifficulty();
-        //MessageBoxMenu.ShowMessage("Survive to the bats attack by 30 seconds, you can move with wasd or arrows key and fire with the left click of mouse, GOOD LUCK!!!", 10);
+    }
+
+    private void SetCursor()
+    {
+        if (_archerCursor != null)
+        {
+            Cursor.SetCursor(_archerCursor, new Vector2(2.5f, 2.5f), CursorMode.Auto);
+        }
     }
 
     private void SetDifficulty()

@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     #region Static Variables
     static int _miniGameDuration = 15;
     static int _difficultyLevel = 1;
+    public static string _currentGameName;
     #endregion
 
     #region Private Variables
@@ -103,7 +104,7 @@ public class GameManager : MonoBehaviour
             _difficultyLevel += 1;
         }
 
-        if (_scenesLoaded.Count >= BuildSettingsCount -2)
+        if (_scenesLoaded.Count >= BuildSettingsCount -3)
         {
             SceneManager.LoadScene("Score");
         }
@@ -128,6 +129,7 @@ public class GameManager : MonoBehaviour
                     GameName = System.Enum.GetName(typeof(ScenesEnum), sceneIndex)
                 });
 
+                _currentGameName = System.Enum.GetName(typeof(ScenesEnum), sceneIndex);
                 SceneManager.LoadScene(sceneIndex);
             }
             else if (_scenesLoaded.Count < (SceneManager.sceneCountInBuildSettings - 3))

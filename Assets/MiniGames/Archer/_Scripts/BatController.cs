@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 [RequireComponent(typeof(CapsuleCollider2D))]
 [RequireComponent(typeof(Rigidbody2D))]
@@ -30,8 +31,18 @@ public class BatController : MonoBehaviour
     private void FixedUpdate()
     {
         Vector3 direction = _playerLife.transform.position - this.transform.position;
-        float distance = direction.sqrMagnitude;
+
+        if (direction.x > 0)
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().flipX = false;
+        }
+        
         _batRg.MovePosition(transform.position + direction.normalized * _movementSpeed * Time.fixedDeltaTime);
+        
     }
 
     private void OnEnable()

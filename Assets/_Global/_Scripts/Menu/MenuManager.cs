@@ -40,6 +40,11 @@ public class MenuManager : MonoBehaviour
         _AudioPanel.SetActive(true);
     }
 
+    public void LoadControlsMenu()
+    {
+        SceneManager.LoadScene("Controls");
+    }
+
     public void CloseApplication()
     {
         Application.Quit();
