@@ -69,7 +69,7 @@ public class RunnerMapGenerator : MonoBehaviour
                 //Instanciate Coins
                 InstanciateCoins(coinsPrefabRamdon, floorInstance.GetComponentInChildren<EmptyClass>().transform.position);
 
-                spawnPosition.x += colliderSize.x + 2f;
+                spawnPosition.x += colliderSize.x + 3f;
             }
         }
         else if (_activateDebugMode)

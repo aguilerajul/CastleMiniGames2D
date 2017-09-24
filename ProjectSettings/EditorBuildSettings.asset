@@ -29,6 +29,3 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Global/_Scenes/Controls.unity
     guid: cb20e8f0a7ca7324ba2de2ae0ca14103
-  - enabled: 1
-    path: Assets/_Global/_Scenes/MessageBox.unity
-    guid: 69081e3793f83a54fba7d86f9d62a215

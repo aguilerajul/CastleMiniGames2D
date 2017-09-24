@@ -104,7 +104,8 @@ public class GameManager : MonoBehaviour
             _difficultyLevel += 1;
         }
 
-        if (_scenesLoaded.Count >= BuildSettingsCount -3)
+        int buildSettings = BuildSettingsCount - 2;
+        if (_scenesLoaded.Count >= buildSettings)
         {
             SceneManager.LoadScene("Score");
         }
