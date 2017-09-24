@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
 
             _animator.SetTrigger(AnimationEnum.WalkingLeft.ToString());
         }
-        else if (directionToMove > 0 && !IsShooting && !IsOnLadder)
+        else if (directionToMove > 0 && !IsShooting)
         {
             _animator.ResetTrigger(AnimationEnum.Up.ToString());
             _animator.ResetTrigger(AnimationEnum.WalkingLeft.ToString());
